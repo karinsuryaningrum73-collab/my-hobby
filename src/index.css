@@ -38,9 +38,8 @@
 }
 
 @keyframes swimArm {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(-45deg); }
-  100% { transform: rotate(0deg); }
+  0%, 100% { transform: rotate(-18deg); }
+  50% { transform: rotate(18deg); }
 }
 
 @keyframes waveSlide {
@@ -175,30 +174,30 @@
 }
 
 .anim-float { animation: floatSlow 3.2s ease-in-out infinite; }
-.anim-swim-body { animation: swimBody 1.8s ease-in-out infinite; }
-.anim-swim-arm { animation: swimArm 1.1s ease-in-out infinite; transform-box: fill-box; transform-origin: 80% 20%; }
+.anim-swim-body { animation: swimBody 1.8s ease-in-out infinite; transform-box: view-box; transform-origin: 85px 88px; }
+.anim-swim-arm { animation: swimArm 1.1s ease-in-out infinite; transform-box: view-box; transform-origin: 98px 70px; }
 .anim-wave { animation: waveSlide 2.2s ease-in-out infinite; }
 .anim-bubble-1 { animation: bubbleRise 1.6s ease-out infinite; }
 .anim-bubble-2 { animation: bubbleRise 1.9s ease-out 0.6s infinite; }
 .anim-book-bob { animation: bookBob 2.4s ease-in-out infinite; }
 .anim-page-flip { animation: pageFlip 2s ease-in-out infinite; transform-box: fill-box; transform-origin: left center; }
-.anim-kick-leg { animation: kickLeg 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: top center; }
+.anim-kick-leg { animation: kickLeg 1.4s ease-in-out infinite; transform-box: view-box; transform-origin: 76px 94px; }
 .anim-ball-bounce { animation: ballBounce 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 .anim-sing-head { animation: singHead 1.3s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom center; }
 .anim-note-1 { animation: noteFloat1 1.8s ease-out infinite; }
 .anim-note-2 { animation: noteFloat2 2.1s ease-out 0.7s infinite; }
 .anim-dance-groove { animation: danceGroove 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom center; }
-.anim-dance-arm-l { animation: danceArmLeft 0.7s ease-in-out infinite; transform-box: fill-box; transform-origin: right center; }
-.anim-dance-arm-r { animation: danceArmRight 0.7s ease-in-out infinite; transform-box: fill-box; transform-origin: left center; }
-.anim-brush-paint { animation: brushPaint 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom left; }
+.anim-dance-arm-l { animation: danceArmLeft 0.7s ease-in-out infinite; transform-box: view-box; transform-origin: 72px 72px; }
+.anim-dance-arm-r { animation: danceArmRight 0.7s ease-in-out infinite; transform-box: view-box; transform-origin: 108px 72px; }
+.anim-brush-paint { animation: brushPaint 1.8s ease-in-out infinite; transform-box: view-box; transform-origin: 76px 92px; }
 .anim-wheel-spin { animation: wheelSpin 1.2s linear infinite; transform-box: fill-box; transform-origin: center; }
 .anim-bike-ride { animation: bikeRide 0.6s ease-in-out infinite; }
 .anim-wind { animation: windStreak 1.3s linear infinite; }
-.anim-pan-toss { animation: panToss 1.5s ease-in-out infinite; transform-box: fill-box; transform-origin: left center; }
+.anim-pan-toss { animation: panToss 1.5s ease-in-out infinite; transform-box: view-box; transform-origin: 76px 84px; }
 .anim-veggie-jump { animation: veggieJump 1.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 .anim-steam-1 { animation: steamCurl 1.8s ease-out infinite; }
 .anim-steam-2 { animation: steamCurl 2.1s ease-out 0.6s infinite; }
-.anim-mascot-wave { animation: mascotWave 1.6s ease-in-out infinite; transform-box: fill-box; transform-origin: 20% 80%; }
+.anim-mascot-wave { animation: mascotWave 1.6s ease-in-out infinite; transform-box: view-box; transform-origin: 132px 112px; }
 .anim-shake { animation: gentleShake 0.45s ease-in-out; }
 .anim-sound-bar { animation: soundBar 0.7s ease-in-out infinite; transform-origin: center; }
 

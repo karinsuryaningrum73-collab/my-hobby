@@ -214,54 +214,66 @@ export const HobbyIllustration: React.FC<HobbyIllustrationProps> = ({
     case 'swimming':
       return (
         <svg viewBox="0 0 180 150" className={className} aria-label="Swimming illustration">
-          {/* Pool backdrop */}
-          <rect x="10" y="10" width="160" height="130" rx="22" fill="#E0F2FE" />
-          {/* Water base */}
-          <path d="M10 88 Q50 78 90 88 T170 88 L170 118 Q170 140 148 140 L32 140 Q10 140 10 118 Z" fill="#38BDF8" />
+          <defs>
+            <clipPath id="swim-pool-clip">
+              <rect x="10" y="10" width="160" height="130" rx="22" />
+            </clipPath>
+          </defs>
 
-          {/* Bubbles */}
-          <circle cx="42" cy="72" r="4" fill="#FFFFFF" className="anim-bubble-1" />
-          <circle cx="138" cy="68" r="5" fill="#FFFFFF" className="anim-bubble-2" />
-          <circle cx="148" cy="80" r="3" fill="#BAE6FD" className="anim-bubble-1" />
+          <g clipPath="url(#swim-pool-clip)">
+            {/* Pool backdrop */}
+            <rect x="10" y="10" width="160" height="130" fill="#E0F2FE" />
+            {/* Water base */}
+            <path d="M10 88 Q50 78 90 88 T170 88 L170 140 L10 140 Z" fill="#38BDF8" />
 
-          {/* Swimmer */}
-          <g className="anim-swim-body">
-            {/* Back splashing feet */}
-            <path d="M38 92 L22 82" stroke="#FDBA74" strokeWidth="10" strokeLinecap="round" />
-            <path d="M40 97 L24 98" stroke="#FDBA74" strokeWidth="10" strokeLinecap="round" />
-            {/* Torso in swimsuit */}
-            <ellipse cx="74" cy="92" rx="26" ry="13" fill="#F97316" />
-            {/* Head */}
-            <circle cx="110" cy="74" r="19" fill="#FED7AA" />
-            {/* Swim Cap */}
-            <path d="M91 72 Q92 52 111 53 Q129 53 128 72 Z" fill="#EF4444" />
-            {/* Swim Goggles */}
-            <rect x="104" y="67" width="11" height="8" rx="3" fill="#0284C7" stroke="#0F172A" strokeWidth="1.5" />
-            <rect x="117" y="67" width="11" height="8" rx="3" fill="#0284C7" stroke="#0F172A" strokeWidth="1.5" />
-            <line x1="115" y1="71" x2="117" y2="71" stroke="#0F172A" strokeWidth="2" />
-            {/* Happy Smile */}
-            <path d="M108 82 Q115 88 122 82" stroke="#9A3412" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-            {/* Animated Freestyle Arm */}
-            <g className="anim-swim-arm">
-              <path d="M84 86 Q102 48 128 58" stroke="#FDBA74" strokeWidth="11" strokeLinecap="round" fill="none" />
-              <circle cx="130" cy="59" r="6" fill="#FDBA74" />
+            {/* Bubbles */}
+            <circle cx="42" cy="72" r="4" fill="#FFFFFF" className="anim-bubble-1" />
+            <circle cx="138" cy="68" r="5" fill="#FFFFFF" className="anim-bubble-2" />
+            <circle cx="148" cy="80" r="3" fill="#BAE6FD" className="anim-bubble-1" />
+
+            {/* Swimmer */}
+            <g className="anim-swim-body">
+              {/* Back splashing feet */}
+              <path d="M44 92 L24 83" stroke="#FDBA74" strokeWidth="10" strokeLinecap="round" />
+              <path d="M46 97 L25 99" stroke="#FDBA74" strokeWidth="10" strokeLinecap="round" />
+              {/* Torso in swimsuit */}
+              <ellipse cx="74" cy="92" rx="26" ry="13" fill="#F97316" />
+              {/* Head */}
+              <circle cx="110" cy="74" r="19" fill="#FED7AA" />
+              {/* Swim Cap */}
+              <path d="M91 72 Q92 52 111 53 Q129 53 128 72 Z" fill="#EF4444" />
+              {/* Swim Goggles */}
+              <rect x="104" y="67" width="11" height="8" rx="3" fill="#0284C7" stroke="#0F172A" strokeWidth="1.5" />
+              <rect x="117" y="67" width="11" height="8" rx="3" fill="#0284C7" stroke="#0F172A" strokeWidth="1.5" />
+              <line x1="115" y1="71" x2="117" y2="71" stroke="#0F172A" strokeWidth="2" />
+              {/* Happy Smile */}
+              <path d="M108 82 Q115 88 122 82" stroke="#9A3412" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+
+              {/* Fixed Upper Arm firmly connected to shoulder/torso */}
+              <path d="M82 88 L98 70" stroke="#FDBA74" strokeWidth="11" strokeLinecap="round" fill="none" />
+
+              {/* Animated Forearm & Hand pivoting cleanly at the elbow (98, 70) */}
+              <g className="anim-swim-arm">
+                <path d="M98 70 Q114 60 128 63" stroke="#FDBA74" strokeWidth="10.5" strokeLinecap="round" fill="none" />
+                <circle cx="130" cy="64" r="6" fill="#FDBA74" />
+              </g>
             </g>
-          </g>
 
-          {/* Foreground animated wave */}
-          <g className="anim-wave">
-            <path
-              d="M12 102 Q36 92 60 102 T108 102 T156 102 T174 102 L174 122 Q174 140 148 140 L32 140 Q12 140 12 122 Z"
-              fill="#0EA5E9"
-              opacity="0.88"
-            />
-            <path
-              d="M20 112 Q40 106 60 112 T100 112 T140 112"
-              stroke="#E0F2FE"
-              strokeWidth="3"
-              strokeLinecap="round"
-              fill="none"
-            />
+            {/* Foreground animated wave (wider so sliding never leaves edge gaps) */}
+            <g className="anim-wave">
+              <path
+                d="M-10 102 Q18 92 46 102 T102 102 T158 102 T204 102 L204 145 L-10 145 Z"
+                fill="#0EA5E9"
+                opacity="0.88"
+              />
+              <path
+                d="M16 112 Q38 106 60 112 T104 112 T148 112"
+                stroke="#E0F2FE"
+                strokeWidth="3"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </g>
           </g>
         </svg>
       );
