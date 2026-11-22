@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BookOpen, Headphones, Mic, Star, Volume2, VolumeX } from 'lucide-react';
 import { HOBBIES } from './data/hobbies';
-import { HobbyIllustration, MascotHero } from './components/HobbyIllustration';
+import { HobbyIllustration, Kelompok3Banner, MascotHero } from './components/HobbyIllustration';
 import { LearnListenMode } from './components/LearnListenMode';
 import { SpeakingPracticeMode } from './components/SpeakingPracticeMode';
 import { ListeningQuizMode } from './components/ListeningQuizMode';
@@ -170,8 +170,9 @@ export default function App() {
             {/* Hero Section */}
             <div className="rounded-3xl bg-gradient-to-br from-sky-50 via-white to-amber-50 border-2 border-sky-200 shadow-[0_8px_0_#BAE6FD] p-6 sm:p-10 mb-10">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                <div className="md:col-span-4 flex flex-col items-center">
-                  <MascotHero className="w-48 h-48 sm:w-56 sm:h-56" />
+                <div className="md:col-span-4 flex flex-col items-center justify-center">
+                  <Kelompok3Banner />
+                  <MascotHero className="w-48 h-48 sm:w-52 sm:h-52" />
                 </div>
 
                 <div className="md:col-span-8 text-center md:text-left">

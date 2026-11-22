@@ -6,6 +6,116 @@ interface HobbyIllustrationProps {
   className?: string;
 }
 
+const KELOMPOK_LETTERS = [
+  { char: 'K', color: '#0284C7', rotate: '-4deg', translate: '0px' },
+  { char: 'e', color: '#EC4899', rotate: '3deg', translate: '-2px' },
+  { char: 'l', color: '#F59E0B', rotate: '-2deg', translate: '1px' },
+  { char: 'o', color: '#10B981', rotate: '4deg', translate: '-1px' },
+  { char: 'm', color: '#F97316', rotate: '-3deg', translate: '1px' },
+  { char: 'p', color: '#0EA5E9', rotate: '3deg', translate: '-2px' },
+  { char: 'o', color: '#E11D48', rotate: '-2deg', translate: '0px' },
+  { char: 'k', color: '#059669', rotate: '4deg', translate: '-1px' },
+];
+
+export const Kelompok3Banner: React.FC = () => {
+  return (
+    <div
+      className="relative flex flex-col items-center select-none mb-2"
+      aria-label="Oleh Kelompok 3"
+    >
+      {/* Floating decorative stars & dots */}
+      <svg
+        viewBox="0 0 220 26"
+        className="w-48 h-6 -mb-1 pointer-events-none"
+        aria-hidden="true"
+      >
+        <path
+          d="M28 12 L30 16 L34 17 L31 20 L32 24 L28 22 L24 24 L25 20 L22 17 L26 16 Z"
+          fill="#F59E0B"
+          className="anim-float"
+        />
+        <circle cx="62" cy="14" r="3" fill="#EC4899" />
+        <text
+          x="110"
+          y="17"
+          textAnchor="middle"
+          fontSize="12"
+          fontWeight="700"
+          letterSpacing="2"
+          fill="#0369A1"
+          style={{ fontFamily: 'var(--font-display)' }}
+        >
+          OLEH
+        </text>
+        <circle cx="158" cy="14" r="3" fill="#10B981" />
+        <path
+          d="M192 8 L194 13 L199 14 L195 17 L196 22 L192 19 L188 22 L189 17 L185 14 L190 13 Z"
+          fill="#0EA5E9"
+          className="anim-float"
+        />
+      </svg>
+
+      {/* Playful multi-color display lettering */}
+      <div
+        className="font-display flex items-baseline justify-center gap-0.5 text-3xl sm:text-4xl font-extrabold tracking-tight leading-none"
+        style={{
+          filter: 'drop-shadow(0 3px 0 rgba(15, 23, 42, 0.12))',
+        }}
+      >
+        {KELOMPOK_LETTERS.map((item, idx) => (
+          <span
+            key={idx}
+            style={{
+              color: item.color,
+              transform: `rotate(${item.rotate}) translateY(${item.translate})`,
+              WebkitTextStroke: '3px #FFFFFF',
+              paintOrder: 'stroke fill',
+            }}
+            className="inline-block"
+          >
+            {item.char}
+          </span>
+        ))}
+        <span className="w-2" aria-hidden="true" />
+        <span
+          style={{
+            color: '#F59E0B',
+            transform: 'rotate(6deg) translateY(-2px)',
+            WebkitTextStroke: '3.5px #FFFFFF',
+            paintOrder: 'stroke fill',
+          }}
+          className="inline-block text-4xl sm:text-[2.6rem] font-extrabold"
+        >
+          3
+        </span>
+      </div>
+
+      {/* Smooth aesthetic rainbow wave underline */}
+      <svg
+        viewBox="0 0 180 14"
+        className="w-40 h-3.5 mt-1 pointer-events-none"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="kelompok3Arc" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#0EA5E9" />
+            <stop offset="35%" stopColor="#EC4899" />
+            <stop offset="70%" stopColor="#F59E0B" />
+            <stop offset="100%" stopColor="#10B981" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M10 9 Q90 1 170 9"
+          fill="none"
+          stroke="url(#kelompok3Arc)"
+          strokeWidth="4.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+  );
+};
+
 export const MascotHero: React.FC<{ className?: string }> = ({ className = 'w-44 h-44' }) => {
   return (
     <svg viewBox="0 0 200 180" className={className} aria-label="Friendly learning mascot waving">
