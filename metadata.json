@@ -1,0 +1,6 @@
+{
+  "name": "My Hobby - English Fun Learning",
+  "description": "Aplikasi belajar bahasa Inggris interaktif untuk siswa SD kelas 3-5 bertema My Hobby dengan fokus Listening dan Speaking.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
